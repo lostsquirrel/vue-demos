@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+    <meta name="theme-color" content="#000000" />
+    <title>React App</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+
+<body><noscript>You need to enable JavaScript to run this app.</noscript>
+<div id="root"></div>
+</body>
+<script type="text/javascript">
+    const url = "http://open.hongya.cdsunrise.net:28666/api/complain/add?key=46b77feb23be3ce619f2184d03fc76bb6066b1a213ffb4ff7770e79f46a5b9e6"
+
+    axios.post(url, {})
+        .then((resp) => {
+            console.log(resp)
+        })
+</script>
+</html>
