@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>插槽内容</title>
+</head>
+<body>
+<div id="slot01">
+    <navigation-link url="/profile">
+        Your Profile
+    </navigation-link>
+    <navigation-link url="/profile">
+        <!-- 添加一个 Font Awesome 图标 -->
+        <span class="fa fa-user"></span>
+        Your Profile2
+    </navigation-link>
+    <navigation-link url="/profile">
+        <!-- 添加一个图标的组件 -->
+        <font-awesome-icon name="user"></font-awesome-icon>
+        Your Profile3
+    </navigation-link>
+    <navigation-link url="/profile">
+        Logged in as {{ user.name }}
+    </navigation-link>
+</div>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    Vue.component('navigation-link', {
+        props: ['url'],
+        template: '<a v-bind:href="url" class="nav-link"><slot></slot></a>'
+    })
+    new Vue({
+        el: '#slot01',
+        data: {
+            user: {
+                name: "John"
+            }
+        }
+    })
+</script>
+</html>
